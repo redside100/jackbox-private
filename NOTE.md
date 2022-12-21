@@ -8,4 +8,5 @@ You need to first connect to the IP through HTTPS and proceed to let Chrome trus
 
 # Running
 
+`npm install`
 `npm run startv1`
