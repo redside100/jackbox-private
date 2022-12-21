@@ -1,0 +1,442 @@
+GET https://localhost/room
+Response:
+{"create":true,"server":"i-05904ecd2e9d68c22.play.jackboxgames.com"}
+used by tjpp 1, 2, 3, 4, 5, 6
+
+GET http://i-05904ecd2e9d68c22.play.jackboxgames.com:38203/socket.io/1?t=41
+Response:
+a365d7f550cff3c1889cbcb66806:60:60:websocket,flashsocket
+used by tjpp 1, 2, 3, 4, 5, 6
+
+GET http://i-05904ecd2e9d68c22.play.jackboxgames.com:38203/socket.io/1/websocket/a365d7f550cff3c1889cbcb66806
+it's a websocket connection
+used by tjpp 1, 2, 3, 4, 5, 6
+
+GET http://gamenews.jackboxgames.com/News/TJPP2/TJPP2_News_Win.json
+Response:
+{
+"DLC":false,
+"Ticker":"Welcome to The Jackbox Party Pack 2! The even more ultimate game night bundle!"
+}
+used by tjpp 2
+
+POST https://localhost/accessToken
+Request:
+{"appId":"c01f66be-745d-4173-8dac-c60395b2437a","roomId":"IMAN","userId":"A15DCD44-7A33-4A51-A67D-249ED186E8F0"}
+Response:
+{
+  "success": true,
+  "accessToken": "082fdf7e0242b3a8cdd7b8e1"
+}
+used by tjpp 3, 4, 5, 6
+
+GET http://gameconfig.jackboxgames.com/Games/Slingshoot/v2/prod/SSEnemies.json
+GET http://gameconfig.jackboxgames.com/Games/Slingshoot/v2/prod/SSDifficulty.json
+GET http://gameconfig.jackboxgames.com/Games/Slingshoot/v2/prod/SSChallenges.json
+GET http://gameconfig.jackboxgames.com/Games/Slingshoot/v2/prod/SSItems.json
+GET http://gameconfig.jackboxgames.com/Games/Slingshoot/v2/prod/SSTerrain.json
+GET http://gameconfig.jackboxgames.com/Games/Slingshoot/v2/prod/SSWeapons.json
+GET http://gameconfig.jackboxgames.com/Games/Slingshoot/v2/prod/SSTuneables.json
+used by tjpp 5 in zipple dome
+
+GET https://localhost/api/v2/app-configs/TriviaDeath2?app_version=0.0.0&platform=Win
+Response:
+see app configs
+used by tjpp 6, 7, 8
+
+GET https://i-0aa157812cf8ae836.play.jackboxgames.com/api/v2/ugc/list/q3featured
+Response:
+{
+  "ok": true,
+  "body": {
+    "listId": "q3featured",
+    "entries": [
+      {
+        "contentId": "LKHQJYX",
+        "author": "Jackbox Games",
+        "title": "MST3K Mega Monster Episode",
+        "type": "",
+        "published": "2022-07-27T15:00:00Z"
+      },
+      {
+        "contentId": "NTJGRCF",
+        "author": "Jackbox Games",
+        "title": "Holidays 2021!!!",
+        "type": "",
+        "published": "2021-12-08T16:04:00Z"
+      },
+      {
+        "contentId": "XGTZMYG",
+        "author": "Jackbox Games",
+        "title": "Ready Quipper One",
+        "type": "",
+        "published": "2021-04-22T15:22:00Z"
+      },
+      {
+        "contentId": "QMYZMLY",
+        "author": "Jackbox Games",
+        "title": "Break That Ice",
+        "type": "",
+        "published": "2020-08-28T18:09:22.000000451Z"
+      },
+      {
+        "contentId": "YMYGTYH",
+        "author": "Jackbox Games",
+        "title": "Happily Ever Laughter",
+        "type": "",
+        "published": "2020-08-26T18:09:22.000000451Z"
+      },
+      {
+        "contentId": "ZZFPEPM",
+        "author": "Jackbox Games",
+        "title": "Kids Only! Stay Out!",
+        "type": "",
+        "published": "2020-08-24T22:35:46.000000906Z"
+      },
+      {
+        "contentId": "QSQEMTF",
+        "author": "Jackbox Games",
+        "title": "Set Course for Sci-Fi",
+        "type": "",
+        "published": "2020-08-24T16:58:13.000000246Z"
+      }
+    ]
+  }
+}
+used by tjpp 7 in quiplash 3
+there is one more official episode:
+FMJRLWX "Language Laughter With Duolingo" 2022/07/06
+
+POST https://i-0aa157812cf8ae836.play.jackboxgames.com/api/v2/rooms
+Request:
+{"appId":"37c1627d-4b01-4f45-b95f-80197cd4403c","appTag":"quiplash3","audienceEnabled":true,"locale":"en","maxPlayers":8,"moderatorPassword":"59254","password":"34734","platform":"Win","playerNames":{"reject":{"lexicon":["hate"]}},"time":1661144624560.0,"twitchLocked":false,"userId":"D34CC59F-C3E7-E72A-41DC-7355017A09F3"} (moderatorPassword, password and locale are optional)
+Response:
+{
+  "ok": true,
+  "body": {
+    "host": "i-0aa157812cf8ae836.play.jackboxgames.com",
+    "code": "ZEMH",
+    "token": "cafcdafcf62a4d2f68efb41d"
+  }
+}
+used by tjpp 7, 8
+
+GET https://i-0aa157812cf8ae836.play.jackboxgames.com/api/v2/rooms/ZEMH/play?user-id=40388.0733159343&format=json&name=37c1627d-4b01-4f45-b95f-80197cd4403c&role=host&host-token=cafcdafcf62a4d2f68efb41d
+it's a websocket connection
+has header "X-Room-Code: ZEMH"
+used by tjpp 7, 8
+
+GET https://localhost/api/v2/ugc/list/drawful-animated
+Response:
+{
+  "ok": true,
+  "body": {
+    "listId": "drawful-animated",
+    "entries": [
+      {
+        "contentId": "MDNCXWP",
+        "author": "Jackbox Games",
+        "title": "holidazed \u0026 confused",
+        "description": "It's a wintery holiday-themed episode of Drawful Animate!",
+        "type": "",
+        "published": "2021-12-08T16:05:00Z"
+      },
+      {
+        "contentId": "FCNNFXS",
+        "author": "Jackbox Games",
+        "title": "pax unplugged",
+        "description": "Board games, RPGs, convention centers...yep, this is the custom episode for PAX Unplugged!",
+        "type": "",
+        "published": "2021-12-01T19:40:00Z"
+      },
+      {
+        "contentId": "JMLRYBT",
+        "author": "Jackbox Games",
+        "title": "drawfully wedded",
+        "description": "This wedding-themed episode will make you believe in weddings again.",
+        "type": "",
+        "published": "2021-09-28T11:27:00Z"
+      },
+      {
+        "contentId": "BQMZWMG",
+        "author": "Jackbox Games",
+        "title": "itz 4 kidz!!",
+        "description": "This kid-friendly episode is written FOR kids BY adults.",
+        "type": "",
+        "published": "2021-09-28T10:26:00Z"
+      },
+      {
+        "contentId": "EKGXPCP",
+        "author": "Jackbox Games",
+        "title": "dr-aaaahh!!-ful",
+        "description": "Is this a horror movie? No, it's a horror-themed episode.",
+        "type": "",
+        "published": "2021-09-28T09:25:00Z"
+      },
+      {
+        "contentId": "WJRFQCX",
+        "author": "Jackbox Games",
+        "title": "play harder",
+        "description": "This work-themed episode is perfect for awkward happy hours.",
+        "type": "",
+        "published": "2021-09-28T08:24:00Z"
+      }
+    ]
+  }
+}
+used by tjpp 8 in drawful animate
+
+GET https://localhost/api/v2/rooms/HPNY
+Response:
+{
+  "ok": true,
+  "body": {
+    "appId": "37c1627d-4b01-4f45-b95f-80197cd4403c",
+    "appTag": "quiplash3",
+    "audienceEnabled": true,
+    "code": "HPNY",
+    "host": "i-0233d4ff72efd337e.play.jackboxgames.com",
+    "audienceHost": "localhost",
+    "locked": false,
+    "full": false,
+    "maxPlayers": 8,
+    "minPlayers": 0,
+    "moderationEnabled": true,
+    "passwordRequired": true,
+    "twitchLocked": false,
+    "locale": "en",
+    "keepalive": false,
+    "controllerBranch": ""
+  }
+}
+used by jackbox.tv
+
+GET wss://i-0233d4ff72efd337e.play.jackboxgames.com/api/v2/rooms/HPNY/play?role=player&name=AAA&format=json&user-id=711d18a2-ebd3-407e-a372-0960a8cb7c99&password=12345 (password is optional, if room password protected)
+it's a websocket connection
+used by jackbox.tv
+
+GET wss://localhost/api/v2/audience/HPNY/play?role=audience&name=AAA&format=json&user-id=711d18a2-ebd3-407e-a372-0960a8cb7c99
+it's a websocket connection
+used by jackbox.tv
+
+GET wss://i-0233d4ff72efd337e.play.jackboxgames.com/api/v2/rooms/HPNY/play?role=moderator&name=moderator&format=json&password=12345
+it's a websocket connection
+used by jackbox.tv
+
+POST https://localhost/artifact
+Request:
+{"accessToken":"116be98a577f36b69c33e093","appId":"d4eab799-37ab-4649-b599-548442d081ce","blob":{"audience":{},"players":[{"deathReason":{"controllerText":"maybe don't play the lottery","crazyWallText":["scratched poorly","scratched a skull","scratcher disaster","revealed a skull","didn't win big at Scratch-Off","couldn't stop scratching","got a skull","scratch-offed"],"id":"ScratchOff"},"dollInfo":{"id":"Green"},"id":"7b297ce6-5100-4bfd-bfa2-f6de1c4c3b3a","item":{},"name":"AAA","questionsCorrect":1,"score":1475.0,"wasDisgracedWinner":false,"wasEliminatedByDeathWall":false,"wonGame":false}]},"categoryId":"TriviaDeath2Game","userId":"C6FB5029-46C4-DDFA-67D6-3A2FFC649E9"}
+Response:
+{
+  "success": true,
+  "artifactId": "443feeb03473b171d109ca65ca82f3a7",
+  "categoryId": "TriviaDeath2Game",
+  "rootId": "jbg-blobcast-artifacts"
+}
+request is unique for each game
+
+GET https://fishery.jackboxgames.com/artifact/gallery/TriviaDeath2Game/443feeb03473b171d109ca65ca82f3a7
+Response:
+{"artifactId":"443feeb03473b171d109ca65ca82f3a7","categoryId":"TriviaDeath2Game","gameData":[{"type":"container","title":"","avatar":"","children":[{"type":"shareable","gameObjectId":0,"title":"AAA","twitterOptions":{"defaultText":"Look who died #TriviaMurderParty2 jackboxgames.com","imageKey":"TriviaDeath2Game/443feeb03473b171d109ca65ca82f3a7/0","imagePngUri":"TriviaDeath2Game/443feeb03473b171d109ca65ca82f3a7/image_0.png","imageGifUri":"TriviaDeath2Game/443feeb03473b171d109ca65ca82f3a7/anim_0.gif","objectId":0,"gameId":"TriviaDeath2Game"}}]}],"locale":"en"}
+used by games.jackbox.tv
+
+TODO:
+quiplash 2: create and load episodes
+quiplash 3: create and load episodes
+drawful animate: create and load episodes
+
+app configs:
+TriviaDeath2:
+{
+  "ok": true,
+  "body": {
+    "appTag": "TriviaDeath2",
+    "appVersion": 2,
+    "platform": "Win",
+    "settings": {
+      "bannedContentIds": {
+        "TDQuestion": [
+          "55182_es-XL"
+        ],
+        "TDQuestionBomb": [
+          "TMP2-END-1_it-IT"
+        ],
+        "QuiplashContent": [
+          "TMP2-QUIP-1_fr-FR",
+          "TMP2-QUIP-2_fr-FR",
+          "TMP2-QUIP-3_fr-FR",
+          "TMP2-QUIP-4_fr-FR",
+          "TMP2-QUIP-5_fr-FR",
+          "TMP2-QUIP-1_it-IT",
+          "TMP2-QUIP-2_it-IT",
+          "TMP2-QUIP-3_it-IT",
+          "TMP2-QUIP-4_it-IT",
+          "TMP2-QUIP-5_it-IT"
+        ],
+        "TDQuestionKnife": [
+          "TMP2-END-14_de-DE",
+          "TMP2-END-16_de-DE",
+          "TMP2-END-12_it-IT",
+          "TMP2-END-13_it-IT",
+          "TMP2-END-14_it-IT",
+          "TMP2-END-15_it-IT",
+          "TMP2-END-16_it-IT",
+          "TMP2-END-17_it-IT",
+          "TMP2-END-18_it-IT",
+          "TMP2-END-19_it-IT"
+        ],
+        "TDQuestionMadness": [
+          "TMP2-END-20_it-IT",
+          "TMP2-END-21_it-IT",
+          "TMP2-END-22_it-IT"
+        ]
+      }
+    }
+  }
+}
+RoleModels:
+{
+  "ok": true,
+  "body": {
+    "appTag": "RoleModels",
+    "appVersion": 0,
+    "platform": "Win",
+    "settings": {
+      "preventPictures": false
+    }
+  }
+}
+Jokeboat:
+{
+  "ok": false,
+  "error": "Not Found"
+}
+Ridictionary:
+{
+  "ok": false,
+  "error": "Not Found"
+}
+PushTheButton:
+{
+  "ok": false,
+  "error": "Not Found"
+}
+quiplash3:
+{
+  "ok": true,
+  "body": {
+    "appTag": "quiplash3",
+    "appVersion": 0,
+    "platform": "Win",
+    "settings": {
+      "serverUrl": "i-0aa157812cf8ae836.play.jackboxgames.com"
+    }
+  }
+}
+Everyday:
+{
+  "ok": true,
+  "body": {
+    "appTag": "Everyday",
+    "appVersion": 0,
+    "platform": "Win",
+    "settings": {
+      "serverUrl": "i-0aa157812cf8ae836.play.jackboxgames.com"
+    }
+  }
+}
+WorldChampions:
+{
+  "ok": true,
+  "body": {
+    "appTag": "WorldChampions",
+    "appVersion": 0,
+    "platform": "Win",
+    "settings": {
+      "serverUrl": "i-0d507a9410b2f3477.play.jackboxgames.com"
+    }
+  }
+}
+JackboxTalks:
+{
+  "ok": true,
+  "body": {
+    "appTag": "JackboxTalks",
+    "appVersion": 0,
+    "platform": "Win",
+    "settings": {
+      "serverUrl": "i-0a0c16450bfc2659e.play.jackboxgames.com"
+    }
+  }
+}
+BlankyBlank:
+{
+  "ok": true,
+  "body": {
+    "appTag": "BlankyBlank",
+    "appVersion": 0,
+    "platform": "Win",
+    "settings": {
+      "serverUrl": "i-05904ecd2e9d68c22.play.jackboxgames.com"
+    }
+  }
+}
+DrawfulAnimate:
+{
+  "ok": false,
+  "error": "Not Found"
+}
+TheWheel:
+{
+  "ok": false,
+  "error": "Not Found"
+}
+JobGame:
+{
+  "ok": false,
+  "error": "Not Found"
+}
+SurveyBomb:
+{
+  "ok": false,
+  "error": "Not Found"
+}
+MurderDetectives:
+{
+  "ok": false,
+  "error": "Not Found"
+}
+
+html pages:
+GET https://jackbox.tv/
+Response:
+<!doctype html><html lang="en-US" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Jackbox.TV</title><meta name="description" content="Jackbox.tv is your controller for all of the Jackbox Party Packs and standalone titles. Now, get in here and make some weird memories."><meta name="viewport" content="minimal-ui,width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/><link rel="icon" type="image/png" href="assets/bd0bc28071f72fcb612a.png"/><meta name="og:url" content="https://jackbox.tv/"><meta name="og:title" content="Jackbox.TV"><meta name="og:type" content="website"><meta name="og:description" content="Jackbox.tv is your controller for all of the Jackbox Party Packs and standalone titles. Now, get in here and make some weird memories."><meta name="og:image" content="./images/app-icons/favicon-196x196.png"><meta name="mobile-web-app-capable" content="yes"><meta name="supported-color-schemes" content=""><meta name="color-scheme" content="#4254F4"><meta name="theme-color" content="#4254F4"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/27c01c3ad81292cf3bc5.png"/><link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/bd5168650f2f85fa4159.png"/><link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/125b9b5de16dd4c85cd8.png"/><link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/2e560ce3714a34b74315.png"/><link rel="apple-touch-icon-precomposed" sizes="60x60" href="assets/4b908c11ad4cef686e78.png"/><link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/5a5faa3480fe81736488.png"/><link rel="apple-touch-icon-precomposed" sizes="76x76" href="assets/15eba9d749092d2ab9f7.png"/><link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/24d8bb73ecfdfa856a82.png"/><link rel="icon" type="image/png" href="assets/ad0530b992fa46aa7f61.png" sizes="196x196"/><link rel="icon" type="image/png" href="assets/65932fc532a05709216e.png" sizes="96x96"/><link rel="icon" type="image/png" href="assets/bd0bc28071f72fcb612a.png" sizes="32x32"/><link rel="icon" type="image/png" href="assets/f859c441a8fc5d154e18.png" sizes="16x16"/><link rel="icon" type="image/png" href="assets/cf3de46677f1e6879d4f.png" sizes="128x128"/><meta name="application-name" content="Jackbox.TV"/><meta name="msapplication-TileColor" content="#0067FF"/><meta name="msapplication-TileImage" content="assets/2e560ce3714a34b74315.png"/><meta name="msapplication-square70x70logo" content="assets/cf3de46677f1e6879d4f.png"/><meta name="msapplication-square150x150logo" content="assets/a0f7ca74d5e8316d7e30.png"/><meta name="msapplication-wide310x150logo" content="assets/557d1938825b566ff962.png"/><meta name="msapplication-square310x310logo" content="assets/f86dec733640e871c810.png"/><script>document.documentElement.className=document.documentElement.className.replace("no-js","js")</script><link href="main.css" rel="stylesheet"></head><body style="background-color:#4254f4"><div id="app" class="app"></div><script defer="defer" src="9023.413effb274df5f4b9048.js"></script><script defer="defer" src="main.7dfc655e11dfd8a618d5.js"></script></body></html>
+
+GET https://games.jackbox.tv/
+Response:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="minimal-ui width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="shortcut icon" sizes="512x512" href="/android-chrome-512x512.png">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png">
+    
+    <title>Jackbox Games</title>
+    <script type="module" crossorigin src="/assets/index.070c1d37.js"></script>
+    <link rel="stylesheet" href="/assets/index.de97023b.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    
+  </body>
+</html>

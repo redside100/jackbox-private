@@ -1,0 +1,110 @@
+Old server:
+Server: 1::
+
+Client: 5:::{"args":{"action":"CreateRoom","appId":"WqtOjtE5JDSlp2APnbER9nqM5DEHjin7","options":{"maxPlayers":8,"password":"80768","platform":"Win","platformInformations":{"Displays":[],"Locale":{"country":"AM","display":"hy-AM","language":"hy","name":"hy-AM"},"Renderer":{"name":"Direct/X"},"Store":"Steam","System":{"CPUCores":2,"Memory":{"available":910,"total":1960},"OSMachine":"64 bits","OSVersion":"Windows 8.10","fidelity":"HIGH","name":"Win","platformId":"Win"}},"twitchLocked":null},"type":"Action","userId":"D8DF6570-2963-433E-9C35-C2BF8BCF35DE"},"name":"msg"} (maxPlayers and password are optional)
+
+Server: 5:::{"name":"msg","args":[{"type":"Result","action":"CreateRoom","success":true,"roomId":"XHYS"}]}
+
+Client: 5:::{"args":{"action":"StartSession","appId":"WqtOjtE5JDSlp2APnbER9nqM5DEHjin7","module":"audience","name":"Earwax Audience","options":null,"roomId":"YNVF","type":"Action","userId":"D8DF6570-2963-433E-9C35-C2BF8BCF35DE"},"name":"msg"}
+
+Server: 5:::{"name":"msg","args":[{"type":"Result","action":"StartSession","module":"audience","name":"Earwax Audience","success":true,"response":{"count":0}}]}
+
+Client: 5:::{"args":{"action":"GetSessionStatus","appId":"WqtOjtE5JDSlp2APnbER9nqM5DEHjin7","module":"audience","name":"Earwax Audience","roomId":"YNVF","type":"Action","userId":"D8DF6570-2963-433E-9C35-C2BF8BCF35DE"},"name":"msg"}
+
+Server: 5:::{"name":"msg","args":[{"type":"Result","action":"GetSessionStatus","module":"audience","name":"Earwax Audience","success":true,"response":{"count":0}}]}
+
+---
+
+Server when player joined: 5:::{"name":"msg","args":[{"type":"Event","event":"CustomerJoinedRoom","roomId":"YNVF","customerUserId":"711d18a2-ebd3-407e-a372-0960a8cb7c99","customerName":"AAA","options":{"roomcode":"","name":"AAA","email":"","phone":""}}]}
+
+Client: 5:::{"args":{"action":"SetCustomerBlob","appId":"WqtOjtE5JDSlp2APnbER9nqM5DEHjin7","blob":{"animation":"standard","character":"apple","playerColor":"#E09B4A","playerName":"AAAA"},"customerUserId":"8e700577-d5b2-4e14-979d-3bf9d854ef2c","roomId":"ABCD","type":"Action","userId":"1C8463F5-5EB4-42A3-827C-BAB07039EFD"},"name":"msg"}
+
+Server to player: {"pc":0,"opcode":"object","result":{"key":"bc:customer:8e700577-d5b2-4e14-979d-3bf9d854ef2c","val":{"animation":"standard","character":"apple","playerColor":"#E09B4A","playerName":"AAAA"},"version":0,"from":1}}
+
+Client: 5:::{"args":{"action":"SetCustomerBlob","appId":"WqtOjtE5JDSlp2APnbER9nqM5DEHjin7","blob":{"animation":"standard","character":"apple","isAllowedToStartGame":true,"playerColor":"#E09B4A","playerName":"AAAA","state":"Lobby"},"customerUserId":"8e700577-d5b2-4e14-979d-3bf9d854ef2c","roomId":"ABCD","type":"Action","userId":"1C8463F5-5EB4-42A3-827C-BAB07039EFD"},"name":"msg"}
+
+Server to player: {"pc":0,"opcode":"object","result":{"key":"bc:customer:8e700577-d5b2-4e14-979d-3bf9d854ef2c","val":{"animation":"standard","character":"apple","isAllowedToStartGame":true,"playerColor":"#E09B4A","playerName":"AAAA","state":"Lobby"},"version":0,"from":1}}
+
+Client: 5:::{"args":{"action":"SetRoomBlob","appId":"WqtOjtE5JDSlp2APnbER9nqM5DEHjin7","blob":{"analytics":[{"appid":"Earwax-Win","appname":"Earwax","appversion":"1.0.0","screen":"Earwax-lobby"},{"appid":"Earwax-Win","appname":"Earwax","appversion":"1.0.0","screen":"Earwax-lobby"}],"lobbyState":"WaitingForMore","state":"Lobby"},"roomId":"ABCD","type":"Action","userId":"1C8463F5-5EB4-42A3-827C-BAB07039EFD"},"name":"msg"}
+
+Server to all players: {"pc":0,"opcode":"object","result":{"key":"bc:room","val":{"analytics":[{"appid":"Earwax-Win","appname":"Earwax","appversion":"1.0.0","screen":"Earwax-lobby"},{"appid":"Earwax-Win","appname":"Earwax","appversion":"1.0.0","screen":"Earwax-lobby"}],"lobbyState":"WaitingForMore","state":"Lobby"},"version":0,"from":1}}
+
+---
+
+Client: 5:::{"args":{"action":"LockRoom","appId":"WqtOjtE5JDSlp2APnbER9nqM5DEHjin7","roomId":"ABCD","type":"Action","userId":"1C8463F5-5EB4-42A3-827C-BAB07039EFD"},"name":"msg"}
+
+Server: {"name":"msg","args":[{"type":"Result","action":"LockRoom","success":true,"roomId":"ABCD"}]}
+
+---
+
+Client: 5:::{"args":{"action":"StartSession","appId":"WqtOjtE5JDSlp2APnbER9nqM5DEHjin7","module":"vote","name":"Earwax Vote","options":{"choices":["0","1"]},"roomId":"ABCD","type":"Action","userId":"1C8463F5-5EB4-42A3-827C-BAB07039EFD"},"name":"msg"}
+
+Server: 5:::{"name":"msg","args":[{"type":"Result","action":"StartSession","module":"vote","name":"Earwax Vote","success":true,"response":{}}]}
+
+Server to audience: {"pc":3916,"opcode":"audience/count-group","result":{"key":"Earwax Vote","choices":{"0":0,"1":0}}}
+
+Client: 5:::{"args":{"action":"GetSessionStatus","appId":"WqtOjtE5JDSlp2APnbER9nqM5DEHjin7","module":"vote","name":"Earwax Vote","roomId":"ABCD","type":"Action","userId":"1C8463F5-5EB4-42A3-827C-BAB07039EFD"},"name":"msg"}
+
+Server: 5:::{"name":"msg","args":[{"type":"Result","action":"GetSessionStatus","module":"vote","name":"Earwax Vote","success":true,"response":{"0":0,"1":0}}]}
+
+Client: 5:::{"args":{"action":"StopSession","appId":"WqtOjtE5JDSlp2APnbER9nqM5DEHjin7","module":"vote","name":"Earwax Vote","roomId":"ABCD","type":"Action","userId":"1C8463F5-5EB4-42A3-827C-BAB07039EFD"},"name":"msg"}
+
+Server: 5:::{"name":"msg","args":[{"type":"Result","action":"StopSession","module":"vote","name":"Earwax Vote","success":true,"response":{"0":0,"1":0}}]}
+
+---
+
+Server when player disconnected: 5:::{"name":"msg","args":[{"type":"Event","event":"CustomerLeftRoom","roomId":"IHYT","customerUserId":""}]}
+
+---
+
+Client: 0::
+
+Server: 0::
+
+Server to all players: {"pc":0,"opcode":"client/disconnected","result":{"id":1,"role":"host"}}
+
+Server closing connection
+
+
+Error message from server: -1:::<long bytes message>
+
+Note: server sending 2:: - its a ping message
+
+
+New server: player:
+Server: {"pc":0,"opcode":"client/welcome","result":{"id":2,"name":"AAA","secret":"9ed5d314-8d32-472c-928d-1aa03dd1a71d","reconnect":false,"deviceId":"010b670ab4.b87b17d84bc10d256bc265","entities":{"audience":["audience/pn-counter",{"key":"audience","count":0},{"locked":false}]},"here":{"1":{"id":1,"roles":{"host":{}}}},"profile":{"id":2,"roles":{"player":{"name":"AAA"}}}}}
+
+Client: {"seq":1,"opcode":"client/send","params":{"from":2,"to":1,"body":{"startGame":true}}}
+
+Server: {"pc":46,"re":1,"opcode":"ok","result":{}}
+
+Server to game (old server): {"name":"msg","args":[{"type":"Event","event":"CustomerMessage","roomId":"YNVF","userId":"8e700577-d5b2-4e14-979d-3bf9d854ef2c","message":{"startGame":true}}]}
+
+
+New server: audience:
+Server: {"pc":777,"opcode":"client/welcome","result":{"id":8000001596,"name":"GGG","secret":"3687cc3a8ebae84a98197eed","reconnect":false,"entities":{"Earwax Vote":["audience/count-group",{"key":"Earwax Vote","choices":{"0":0,"1":0}},{"locked":false}],"audience":["audience/pn-counter",{"key":"audience","count":1},{"locked":false}],"bc:room":["object",{"key":"bc:room","val":{"choices":[{"id1":22882,"id2":22422,"name":"LOW POLICE SIREN - CARTOON KNIFE THROW WITH TWANG"},{"id1":22388,"id2":22298,"name":"LONG CARTOON KISS - GLOCKENSPIEL GLISS UP"}],"prompt":"FINISH HIM!","remote":null,"state":"Gameplay_Vote"},"version":16,"from":1},{"locked":false}]},"here":null,"profile":null}}
+
+Client: {"seq":1,"opcode":"audience/count-group/increment","params":{"name":"Earwax Vote","vote":"0","times":1}}
+
+---
+
+Errors (not all):
+Missing format query param: {"pc":0,"opcode":"error","result":{"code":1000,"msg":"missing required querystring param: format"}}
+Parse error: {"pc":0,"opcode":"error","result":{"code":1000,"msg":"parse error in ecast protocol: invalid character 's' looking for beginning of value"}}
+Invalid arguments: {"pc":0,"opcode":"error","result":{"code":1000,"msg":"invalid arguments: unexpected end of JSON input"}}
+Invalid arguments (another): {"pc":0,"opcode":"error","result":{"code":1000,"msg":"invalid arguments: json: cannot unmarshal number to Go struct field .vote of type string"}}
+Invalid format value: {"pc":0,"opcode":"error","result":{"code":1000,"msg":"unknown format: xml"}}
+No "Sec-WebSocket-Protocol" header: {"pc":0,"opcode":"error","result":{"code":2000,"msg":"missing Sec-WebSocket-Protocol header: ecast client error"}}
+Invalid "Sec-WebSocket-Protocol" header: {"pc":0,"opcode":"error","result":{"code":2000,"msg":"unexpected Sec-WebSocket-Protocol header value \"hahag\": ecast client error"}}
+Missing opcode: {"pc":0,"opcode":"error","result":{"code":2002,"msg":"missing opcode"}}
+Invalid opcode: {"pc":0,"opcode":"error","result":{"code":2002,"msg":"invalid opcode"}}
+Duplicate key: {"pc":0,"opcode":"error","result":{"code":2006,"msg":"the key \"avatars\" is already in use"}}
+Invalid client id: {"pc":0,"opcode":"error","result":{"code":2008,"msg":"there is no connected client having id 0"}}
+Invalid role value: {"pc":0,"opcode":"error","result":{"code":2014,"msg":"no such role: aaa: requested role does not exist"}}
+Twitch required: {"pc":0,"opcode":"error","result":{"code":2015,"msg":"twitch login required"}}
+No password: {"pc":0,"opcode":"error","result":{"code":2017,"msg":"password required"}}
+Incorrect password: {"pc":0,"opcode":"error","result":{"code":2018,"msg":"invalid room password"}}
+Missing name: {"pc":0,"opcode":"error","result":{"code":2019,"msg":"missing name"}}
+???: {"pc":0,"opcode":"error","result":{"code":2023,"msg":"permission denied"}}
+Moderators not enabled: {"pc":0,"opcode":"error","result":{"code":2023,"msg":"moderation is not enabled: permission denied"}}
+???: {"pc":0,"opcode":"error","result":{"code":2025,"msg":"illegal operation"}}
