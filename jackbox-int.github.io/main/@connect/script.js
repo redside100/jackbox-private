@@ -12923,7 +12923,7 @@ var Jre = rL((Zre, OA) => {
                 s = {
                     TV_ADROLL_ADVERTISABLE_ID: "WN335VM7RVAMPDZAOWMIHP",
                     TV_ADROLL_PIXEL_ID: "WN335VM7RVAMPDZAOWMIHP",
-                    TV_CDN_IMAGES_URL: "https://s3.amazonaws.com/static.jackboxgames.com/game-images",
+                    TV_CDN_IMAGES_URL: `http://${window.location.hostname}/static/game-images`,
                     TV_DEBUG: "false",
                     TV_DOMAINS: "https://dev.jackbox.tv,https://qa.jackbox.tv,https://jackbox.tv,https://tinyshirts.jackboxgames.com",
                     TV_ECAST: window.location.hostname,
@@ -24469,7 +24469,7 @@ from your past games list.`,
         Aee = {
             CAMERA: "[b]HEADS UP:[/b] We\u2019re not detecting a camera, but you can still play the game without a photo. If this seems wrong, try joining with a different browser.",
             STYLE: "[b]HEADS UP:[/b] Your browser seems a bit outdated, and will have some issues displaying this game.",
-            TOS: "By clicking {submit}, you agree to our [tos]Terms of Service[/tos]"
+            TOS: "The room code is always SAIL!"
         },
         Iee = {
             BRANCH: gee,
@@ -26322,7 +26322,7 @@ de tu lista de partidas anteriores.`,
                 async load() {
                     var e;
                     try {
-                        const n = await (await fetch("https://s3.amazonaws.com/static.jackboxgames.com/banners.json")).json(),
+                        const n = await (await fetch(`http://${window.location.host}/static/banners.json`)).json(),
                             r = (e = n == null ? void 0 : n.bannerAds) != null ? e : [];
                         this.banners = r.filter(this.isValidBanner.bind(this)).map(s => ({
                             url: s.href,
@@ -26338,7 +26338,7 @@ de tu lista de partidas anteriores.`,
                 showDefault() {
                     this.banners = [{
                         url: "https://www.jackboxgames.com/party-pack-seven/?utm_source=jbgtv&utm_medium=jbgtvpp7&utm_campaign=jbgtvpp7",
-                        image: "https://s3.amazonaws.com/static.jackboxgames.com/banners/PP7.png",
+                        image: `http://${window.location.host}/static/banners/PP7.png`,
                         text: "AVAILABLE NOW!"
                     }]
                 },

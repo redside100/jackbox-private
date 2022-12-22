@@ -1,0 +1,19 @@
+{
+    "bannerAds": [
+        {
+            "start": "2022-11-01",
+            "text": "Jackbox Private Server LOL",
+            "src": "static/orange.png",
+            "href": "https://redside.moe"
+        }
+    ],
+
+    "postGameBanners": {
+        "sail": {
+            "copy": "Jackbox Private Server LOL",
+            "url": "https://redside.moe",
+            "cta": "Shop",
+            "theme": ""
+        }
+    }
+}
